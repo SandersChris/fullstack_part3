@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors')
+
+app.use(cors())
 
 let persons = [
     {
@@ -90,8 +93,6 @@ app.post('/api/persons', (req, res) => {
 
     }
 
-    
-
     const person = {
         name: body.name,
         number: body.number,
@@ -103,7 +104,7 @@ app.post('/api/persons', (req, res) => {
     res.json(person)
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
