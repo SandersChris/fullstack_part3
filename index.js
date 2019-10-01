@@ -20,11 +20,13 @@ let persons = [
     },
     {
         name: 'James Mcavoy',
-        number: '444-444-4444',
+        number: '444-444-4443',
         date: new Date(),
         id: 3,
     },
 ]
+
+app.use(express.static('build'))
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello World!</h1>')
