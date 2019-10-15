@@ -5,8 +5,6 @@ const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 
-mongoose.set('useUnifiedTypology', true)
-
 mongoose.connect(url, { useNewUrlParser: true })
     .then(result => {
         console.log('connected to MongoDB')
@@ -14,6 +12,8 @@ mongoose.connect(url, { useNewUrlParser: true })
     .catch((error) => {
         console.log('error connecting to MongoDB:', error.message)
     })
+
+   
 
 const personSchema = new mongoose.Schema({
     name: {type: String, minlength: 3},
