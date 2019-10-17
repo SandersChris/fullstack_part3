@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf build && cd ../fullstack_part2/the_phone_book && npm run build --prod && cp -r build ../../fullstack_part3",
     "deploy": "git push heroku master",
@@ -22,6 +23,7 @@
     "mongoose-unique-validator": "^2.0.3"
   },
   "devDependencies": {
+    "eslint": "^6.5.1",
     "nodemon": "^1.19.2"
   }
 }
